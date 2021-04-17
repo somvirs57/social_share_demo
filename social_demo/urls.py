@@ -16,12 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import home
-from .views import send_gmail
 # from .views import Home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="home"),
     # path('', Home.as_view(), name='home'),
-    path('send_mail/', send_gmail, name="send_mail"),
 ]
