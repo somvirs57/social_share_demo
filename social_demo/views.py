@@ -12,22 +12,3 @@ def home(request):
 # class Home(TemplateView):
 #     template_name = 'home.html'
 
-
-def send_gmail(request):
-    if request.method=="POST":
-        name = request.POST.get('name')
-        subject = request.POST.get('subject')
-        message = request.POST.get('message')
-        print(name, subject, message)
-
-        send_mail(
-            subject,
-            message,
-            'from@mail.com',
-            ['to@mail.com'],
-            fail_silently=False,
-        )
-
-        return HttpResponseRedirect(reverse('home'))
-    else:
-        return HttpResponse('Invalid request')
